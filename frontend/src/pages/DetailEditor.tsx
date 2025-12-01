@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
-import { Button, Loading } from '@/components/shared';
+import { Button, Loading, useToast, useConfirm } from '@/components/shared';
 import { DescriptionCard } from '@/components/preview/DescriptionCard';
 import { useProjectStore } from '@/store/useProjectStore';
 
@@ -19,6 +19,8 @@ export const DetailEditor: React.FC = () => {
     isGlobalLoading,
     taskProgress,
   } = useProjectStore();
+  const { show, ToastContainer } = useToast();
+  const { confirm, ConfirmDialog } = useConfirm();
 
   // 加载项目数据
   useEffect(() => {
@@ -33,13 +35,19 @@ export const DetailEditor: React.FC = () => {
       (p) => p.description_content
     );
     
-    if (hasDescriptions) {
-      if (!confirm('部分页面已有描述，重新生成将覆盖，确定继续吗？')) {
-        return;
-      }
-    }
+    const executeGenerate = async () => {
+      await generateDescriptions();
+    };
     
-    await generateDescriptions();
+    if (hasDescriptions) {
+      confirm(
+        '部分页面已有描述，重新生成将覆盖，确定继续吗？',
+        executeGenerate,
+        { title: '确认重新生成', variant: 'warning' }
+      );
+    } else {
+      await executeGenerate();
+    }
   };
 
   const handleRegeneratePage = async (pageId: string) => {
@@ -50,15 +58,32 @@ export const DetailEditor: React.FC = () => {
     
     // 如果已有描述，询问是否覆盖
     if (page.description_content) {
-      if (!confirm('该页面已有描述，重新生成将覆盖现有内容，确定继续吗？')) {
-        return;
-      }
+      confirm(
+        '该页面已有描述，重新生成将覆盖现有内容，确定继续吗？',
+        async () => {
+          try {
+            await generatePageDescription(pageId);
+            show({ message: '生成成功', type: 'success' });
+          } catch (error: any) {
+            show({ 
+              message: `生成失败: ${error.message || '未知错误'}`, 
+              type: 'error' 
+            });
+          }
+        },
+        { title: '确认重新生成', variant: 'warning' }
+      );
+      return;
     }
     
     try {
       await generatePageDescription(pageId);
+      show({ message: '生成成功', type: 'success' });
     } catch (error: any) {
-      alert(`生成失败: ${error.message || '未知错误'}`);
+      show({ 
+        message: `生成失败: ${error.message || '未知错误'}`, 
+        type: 'error' 
+      });
     }
   };
 
@@ -180,6 +205,8 @@ export const DetailEditor: React.FC = () => {
           )}
         </div>
       </main>
+      <ToastContainer />
+      {ConfirmDialog}
     </div>
   );
 };

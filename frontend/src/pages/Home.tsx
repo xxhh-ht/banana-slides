@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sparkles, FileText, FileEdit } from 'lucide-react';
-import { Button, Input, Textarea, Card } from '@/components/shared';
+import { Button, Input, Textarea, Card, useToast } from '@/components/shared';
 import { useProjectStore } from '@/store/useProjectStore';
 
 type CreationType = 'idea' | 'outline' | 'description';
@@ -12,14 +12,25 @@ const templates = [
   { id: '3', name: '科技蓝', preview: '' },
 ];
 
+const SAVED_TEMPLATE_PREVIEW_KEY = 'home_saved_template_preview';
+
 export const Home: React.FC = () => {
   const navigate = useNavigate();
   const { initializeProject, isGlobalLoading } = useProjectStore();
+  const { show, ToastContainer } = useToast();
   
   const [activeTab, setActiveTab] = useState<CreationType>('idea');
   const [content, setContent] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState<File | null>(null);
   const [templatePreview, setTemplatePreview] = useState<string>('');
+
+  // 从 localStorage 恢复保存的模板预览
+  useEffect(() => {
+    const savedPreview = localStorage.getItem(SAVED_TEMPLATE_PREVIEW_KEY);
+    if (savedPreview) {
+      setTemplatePreview(savedPreview);
+    }
+  }, []);
 
   const tabConfig = {
     idea: {
@@ -48,7 +59,12 @@ export const Home: React.FC = () => {
       setSelectedTemplate(file);
       const reader = new FileReader();
       reader.onload = (e) => {
-        setTemplatePreview(e.target?.result as string);
+        const preview = e.target?.result as string;
+        setTemplatePreview(preview);
+        // 保存模板预览到 localStorage
+        if (preview) {
+          localStorage.setItem(SAVED_TEMPLATE_PREVIEW_KEY, preview);
+        }
       };
       reader.readAsDataURL(file);
     }
@@ -56,7 +72,7 @@ export const Home: React.FC = () => {
 
   const handleSubmit = async () => {
     if (!content.trim()) {
-      alert('请输入内容');
+      show({ message: '请输入内容', type: 'error' });
       return;
     }
 
@@ -66,7 +82,7 @@ export const Home: React.FC = () => {
       // 根据类型跳转到不同页面
       const projectId = localStorage.getItem('currentProjectId');
       if (!projectId) {
-        alert('项目创建失败');
+        show({ message: '项目创建失败', type: 'error' });
         return;
       }
       
@@ -212,6 +228,7 @@ export const Home: React.FC = () => {
           </div>
         </Card>
       </main>
+      <ToastContainer />
     </div>
   );
 };

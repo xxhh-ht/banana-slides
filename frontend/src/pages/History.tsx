@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Home, Clock, FileText, ChevronRight, Trash2 } from 'lucide-react';
-import { Button, Loading, Card } from '@/components/shared';
+import { Button, Loading, Card, useToast, useConfirm } from '@/components/shared';
 import { useProjectStore } from '@/store/useProjectStore';
 import * as api from '@/api/endpoints';
 import { getImageUrl } from '@/api/client';
@@ -17,6 +17,8 @@ export const History: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedProjects, setSelectedProjects] = useState<Set<string>>(new Set());
   const [isDeleting, setIsDeleting] = useState(false);
+  const { show, ToastContainer } = useToast();
+  const { confirm, ConfirmDialog } = useConfirm();
 
   useEffect(() => {
     loadProjects();
@@ -78,7 +80,10 @@ export const History: React.FC = () => {
       }
     } catch (err: any) {
       console.error('打开项目失败:', err);
-      alert('打开项目失败: ' + (err.message || '未知错误'));
+      show({ 
+        message: '打开项目失败: ' + (err.message || '未知错误'), 
+        type: 'error' 
+      });
     }
   };
 
@@ -89,11 +94,13 @@ export const History: React.FC = () => {
     if (!projectId) return;
 
     const projectTitle = project.idea_prompt || '未命名项目';
-    if (!confirm(`确定要删除项目"${projectTitle}"吗？此操作不可恢复。`)) {
-      return;
-    }
-
-    await deleteProjects([projectId]);
+    confirm(
+      `确定要删除项目"${projectTitle}"吗？此操作不可恢复。`,
+      async () => {
+        await deleteProjects([projectId]);
+      },
+      { title: '确认删除', variant: 'danger' }
+    );
   };
 
   const handleToggleSelect = (projectId: string) => {
@@ -121,12 +128,14 @@ export const History: React.FC = () => {
     if (selectedProjects.size === 0) return;
 
     const count = selectedProjects.size;
-    if (!confirm(`确定要删除选中的 ${count} 个项目吗？此操作不可恢复。`)) {
-      return;
-    }
-
-    const projectIds = Array.from(selectedProjects);
-    await deleteProjects(projectIds);
+    confirm(
+      `确定要删除选中的 ${count} 个项目吗？此操作不可恢复。`,
+      async () => {
+        const projectIds = Array.from(selectedProjects);
+        await deleteProjects(projectIds);
+      },
+      { title: '确认批量删除', variant: 'danger' }
+    );
   };
 
   const deleteProjects = async (projectIds: string[]) => {
@@ -156,11 +165,22 @@ export const History: React.FC = () => {
       setSelectedProjects(new Set());
 
       if (deletedCurrentProject) {
-        alert('已删除项目，包括当前打开的项目');
+        show({ 
+          message: '已删除项目，包括当前打开的项目', 
+          type: 'info' 
+        });
+      } else {
+        show({ 
+          message: `成功删除 ${projectIds.length} 个项目`, 
+          type: 'success' 
+        });
       }
     } catch (err: any) {
       console.error('删除项目失败:', err);
-      alert('删除项目失败: ' + (err.message || '未知错误'));
+      show({ 
+        message: '删除项目失败: ' + (err.message || '未知错误'), 
+        type: 'error' 
+      });
     } finally {
       setIsDeleting(false);
     }
@@ -406,6 +426,8 @@ export const History: React.FC = () => {
           </div>
         )}
       </main>
+      <ToastContainer />
+      {ConfirmDialog}
     </div>
   );
 };

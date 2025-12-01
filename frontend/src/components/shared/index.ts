@@ -6,4 +6,5 @@ export { Modal } from './Modal';
 export { Loading, Skeleton } from './Loading';
 export { Toast, useToast } from './Toast';
 export { StatusBadge } from './StatusBadge';
+export { ConfirmDialog, useConfirm } from './ConfirmDialog';
 

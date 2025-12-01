@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GripVertical, Edit2, Trash2, Check, X } from 'lucide-react';
-import { Card } from '@/components/shared';
+import { Card, useConfirm } from '@/components/shared';
 import type { Page } from '@/types';
 
 interface OutlineCardProps {
@@ -22,6 +22,7 @@ export const OutlineCard: React.FC<OutlineCardProps> = ({
   isSelected,
   dragHandleProps,
 }) => {
+  const { confirm, ConfirmDialog } = useConfirm();
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(page.outline_content.title);
   const [editPoints, setEditPoints] = useState(page.outline_content.points.join('\n'));
@@ -139,9 +140,11 @@ export const OutlineCard: React.FC<OutlineCardProps> = ({
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                if (confirm('确定要删除这一页吗？')) {
-                  onDelete();
-                }
+                confirm(
+                  '确定要删除这一页吗？',
+                  onDelete,
+                  { title: '确认删除', variant: 'danger' }
+                );
               }}
               className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
             >
@@ -150,6 +153,7 @@ export const OutlineCard: React.FC<OutlineCardProps> = ({
           </div>
         )}
       </div>
+      {ConfirmDialog}
     </Card>
   );
 };

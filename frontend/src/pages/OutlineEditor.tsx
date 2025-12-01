@@ -18,7 +18,7 @@ import {
   useSortable,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Button, Loading } from '@/components/shared';
+import { Button, Loading, useConfirm } from '@/components/shared';
 import { OutlineCard } from '@/components/outline/OutlineCard';
 import { useProjectStore } from '@/store/useProjectStore';
 import type { Page } from '@/types';
@@ -65,6 +65,7 @@ export const OutlineEditor: React.FC = () => {
   } = useProjectStore();
 
   const [selectedPageId, setSelectedPageId] = useState<string | null>(null);
+  const { confirm, ConfirmDialog } = useConfirm();
 
   // 加载项目数据
   useEffect(() => {
@@ -98,9 +99,14 @@ export const OutlineEditor: React.FC = () => {
     if (!currentProject) return;
     
     if (currentProject.pages.length > 0) {
-      if (!confirm('已有大纲内容，重新生成将覆盖现有内容，确定继续吗？')) {
-        return;
-      }
+      confirm(
+        '已有大纲内容，重新生成将覆盖现有内容，确定继续吗？',
+        async () => {
+          await generateOutline();
+        },
+        { title: '确认重新生成', variant: 'warning' }
+      );
+      return;
     }
     
     await generateOutline();
@@ -261,6 +267,7 @@ export const OutlineEditor: React.FC = () => {
           )}
         </div>
       </div>
+      {ConfirmDialog}
     </div>
   );
 };

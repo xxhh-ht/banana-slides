@@ -1,6 +1,6 @@
 import React from 'react';
 import { Edit2, Trash2 } from 'lucide-react';
-import { StatusBadge, Skeleton } from '@/components/shared';
+import { StatusBadge, Skeleton, useConfirm } from '@/components/shared';
 import { getImageUrl } from '@/api/client';
 import type { Page } from '@/types';
 
@@ -21,6 +21,7 @@ export const SlideCard: React.FC<SlideCardProps> = ({
   onEdit,
   onDelete,
 }) => {
+  const { confirm, ConfirmDialog } = useConfirm();
   const imageUrl = page.generated_image_path
     ? getImageUrl(page.generated_image_path)
     : '';
@@ -57,9 +58,11 @@ export const SlideCard: React.FC<SlideCardProps> = ({
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (confirm('确定要删除这一页吗？')) {
-                    onDelete();
-                  }
+                  confirm(
+                    '确定要删除这一页吗？',
+                    onDelete,
+                    { title: '确认删除', variant: 'danger' }
+                  );
                 }}
                 className="p-2 bg-white rounded-lg hover:bg-red-50 transition-colors"
               >
@@ -92,6 +95,7 @@ export const SlideCard: React.FC<SlideCardProps> = ({
           {index + 1}. {page.outline_content.title}
         </span>
       </div>
+      {ConfirmDialog}
     </div>
   );
 };

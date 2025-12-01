@@ -11,7 +11,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
-import { Button, Loading, Modal, Textarea, useToast } from '@/components/shared';
+import { Button, Loading, Modal, Textarea, useToast, useConfirm } from '@/components/shared';
 import { SlideCard } from '@/components/preview/SlideCard';
 import { useProjectStore } from '@/store/useProjectStore';
 import { getImageUrl } from '@/api/client';
@@ -42,6 +42,7 @@ export const SlidePreview: React.FC = () => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const { show, ToastContainer } = useToast();
+  const { confirm, ConfirmDialog } = useConfirm();
 
   // 加载项目数据
   useEffect(() => {
@@ -56,13 +57,19 @@ export const SlidePreview: React.FC = () => {
       (p) => p.generated_image_path
     );
     
-    if (hasImages) {
-      if (!confirm('部分页面已有图片，重新生成将覆盖，确定继续吗？')) {
-        return;
-      }
-    }
+    const executeGenerate = async () => {
+      await generateImages();
+    };
     
-    await generateImages();
+    if (hasImages) {
+      confirm(
+        '部分页面已有图片，重新生成将覆盖，确定继续吗？',
+        executeGenerate,
+        { title: '确认重新生成', variant: 'warning' }
+      );
+    } else {
+      await executeGenerate();
+    }
   };
 
   const handleRegeneratePage = async () => {
@@ -447,7 +454,7 @@ export const SlidePreview: React.FC = () => {
 
           {/* 编辑框 */}
           <Textarea
-            label="输入修改指令"
+            label="输入修改指令(将自动添加页面描述)"
             placeholder="例如：把背景改成蓝色、增大标题字号、更改文本框样式为虚线..."
             value={editPrompt}
             onChange={(e) => setEditPrompt(e.target.value)}
@@ -468,6 +475,7 @@ export const SlidePreview: React.FC = () => {
         </div>
       </Modal>
       <ToastContainer />
+      {ConfirmDialog}
     </div>
   );
 };

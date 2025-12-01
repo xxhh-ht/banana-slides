@@ -6,10 +6,11 @@ import { OutlineEditor } from './pages/OutlineEditor';
 import { DetailEditor } from './pages/DetailEditor';
 import { SlidePreview } from './pages/SlidePreview';
 import { useProjectStore } from './store/useProjectStore';
-import { Loading } from './components/shared';
+import { Loading, useToast } from './components/shared';
 
 function App() {
   const { currentProject, syncProject, error, setError } = useProjectStore();
+  const { show, ToastContainer } = useToast();
 
   // 恢复项目状态
   useEffect(() => {
@@ -22,10 +23,10 @@ function App() {
   // 显示全局错误
   useEffect(() => {
     if (error) {
-      alert(error);
+      show({ message: error, type: 'error' });
       setError(null);
     }
-  }, [error, setError]);
+  }, [error, setError, show]);
 
   return (
     <BrowserRouter>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/project/:projectId/preview" element={<SlidePreview />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }
