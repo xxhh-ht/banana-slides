@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, ChevronRight, Send, Loader2 } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { Button, useToast } from '@/components/shared';
 import { agentChat } from '@/api/endpoints';
 import { useParams } from 'react-router-dom';
@@ -69,14 +69,24 @@ export const AgentWindow: React.FC<AgentWindowProps> = ({ isOpen, onClose }) => 
         setMessages((prev) => [...prev, assistantMessage]);
       } else {
         show({
-          message: response.error?.message || 'Agent响应失败',
+          message: response.error || 'Agent响应失败',
           type: 'error',
         });
       }
-    } catch (error: any) {
-      console.error('Agent chat error:', error);
+    } catch (err: any) {
+      console.error('Agent chat error:', err);
+      // 兼容 AxiosError / Error / string 等多种情况
+      const errorObj = err as any;
+      let apiMessage = '发送失败';
+      if (errorObj?.response?.data?.error?.message) {
+        apiMessage = errorObj.response.data.error.message;
+      } else if (errorObj?.response?.data?.message) {
+        apiMessage = errorObj.response.data.message;
+      } else if (typeof errorObj?.message === 'string') {
+        apiMessage = errorObj.message;
+      }
       show({
-        message: error?.response?.data?.error?.message || error.message || '发送失败',
+        message: apiMessage,
         type: 'error',
       });
     } finally {

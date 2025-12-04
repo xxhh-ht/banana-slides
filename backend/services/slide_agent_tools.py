@@ -344,3 +344,67 @@ class SlideAgentTools(Toolkit):
                 "message": f"生成失败: {str(e)}"
             }
 
+    def get_project_pages(self) -> Dict[str, Any]:
+        """
+        获取整个项目的页面列表和关键信息，用于全局性修改和规划。
+        
+        Returns:
+            {
+              "success": True,
+              "project": {...},
+              "pages": [
+                {
+                  "index": 1,
+                  "page_id": "...",
+                  "title": "...",
+                  "outline": {...} | null,
+                  "description": {...} | null,
+                  "has_image": bool,
+                  "status": "..."
+                },
+                ...
+              ]
+            }
+        """
+        try:
+            with self.app.app_context():
+                project = Project.query.get(self.project_id)
+                if not project:
+                    return {"success": False, "message": "项目不存在"}
+
+                # 复用已有的模型序列化逻辑，避免到处手写 ORM 查询和字段拼装
+                project_dict = project.to_dict(include_pages=True)
+                raw_pages = project_dict.get("pages", []) or []
+
+                pages_info: List[Dict[str, Any]] = []
+                for i, page in enumerate(raw_pages, 1):
+                    outline = page.get("outline_content")
+                    desc = page.get("description_content")
+                    pages_info.append({
+                        "index": i,
+                        "page_id": page.get("page_id"),
+                        "title": (outline or {}).get("title") or f"页面 {i}",
+                        "outline": outline,
+                        "description": desc,
+                        "has_description": bool(desc),
+                        "has_image": bool(page.get("generated_image_url")),
+                        "status": page.get("status"),
+                    })
+
+                return {
+                    "success": True,
+                    "project": {
+                        "project_id": project_dict.get("project_id"),
+                        "title": project_dict.get("idea_prompt"),  # 暂无正式标题字段，先用 idea_prompt 代表
+                        "status": project_dict.get("status"),
+                        "pages_count": len(pages_info),
+                    },
+                    "pages": pages_info,
+                }
+        except Exception as e:
+            logger.error(f"Error getting project pages: {e}", exc_info=True)
+            return {
+                "success": False,
+                "message": f"获取项目页面信息失败: {str(e)}"
+            }
+

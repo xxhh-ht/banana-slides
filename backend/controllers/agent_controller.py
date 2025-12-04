@@ -39,45 +39,44 @@ def create_slide_agent(project_id: str, app=None) -> Agent:
     slide_tools = SlideAgentTools(project_id=project_id, app=app)
     sleep_tools = SleepTools()
     
-    # Get project context
+    # Get project context（复用 SlideAgentTools 的逻辑）
     with app.app_context():
-        project = Project.query.get(project_id)
-        if not project:
-            raise ValueError("Project not found")
+        project_pages_result = slide_tools.get_project_pages()
+        if not project_pages_result.get("success"):
+            raise ValueError(project_pages_result.get("message", "Failed to load project pages"))
         
-        pages = Page.query.filter_by(project_id=project_id).order_by(Page.order_index).all()
+        pages = project_pages_result.get("pages", [])
         pages_info = []
-        for i, page in enumerate(pages, 1):
-            outline = page.get_outline_content() or {}
-            desc = page.get_description_content() or {}
+        for p in pages:
             pages_info.append({
-                "index": i,
-                "page_id": page.id,
-                "title": outline.get('title', f'页面 {i}'),
-                "has_description": bool(desc),
-                "has_image": bool(page.generated_image_path),
-                "status": page.status
+                "index": p.get("index"),
+                "page_id": p.get("page_id"),
+                "title": p.get("title"),
+                "has_description": bool(p.get("has_description")),
+                "has_image": bool(p.get("has_image")),
+                "status": p.get("status"),
             })
     
-    instructions = f"""你是一个智能幻灯片编辑助手，可以帮助用户编辑和管理幻灯片。
+    instructions = f"""你是一个智能幻灯片编辑助手，可以帮助用户编辑和管理「整个项目」的所有幻灯片，而不仅仅是当前预览的页面。
 
 ## 你的能力
 
-你拥有以下工具：
-1. **edit_page_image** - 编辑页面图片（使用自然语言指令）
-2. **update_page_description** - 更新页面描述内容
-3. **update_page_outline** - 更新页面大纲内容
-4. **regenerate_page_image** - 重新生成页面图片
-5. **sleep** - 等待一段时间（当任务队列已满时使用）
+你拥有以下工具（可对任意页面使用，不限于当前页）：
+1. **get_project_pages** - 获取整个项目的所有页面信息（标题、大纲、描述、图片状态等），用于全局规划和批量修改
+2. **edit_page_image** - 编辑指定页面图片（使用自然语言指令）
+3. **update_page_description** - 更新指定页面的描述内容
+4. **update_page_outline** - 更新指定页面的大纲内容
+5. **regenerate_page_image** - 重新生成指定页面的图片
+6. **sleep** - 等待一段时间（当任务队列已满时使用）
 
 ## 重要规则
 
-1. **并发任务限制**：一次最多只能执行4个异步任务（edit_page_image 和 regenerate_page_image 是异步的）
-2. **任务队列管理**：如果当前有4个任务在执行，你需要使用sleep工具等待一段时间，然后再尝试
-3. **异步任务**：edit_page_image 和 regenerate_page_image 会返回task_id，任务在后台执行
-4. **同步任务**：update_page_description 和 update_page_outline 是同步的，会立即完成
+1. **并发任务限制**：一次最多只能执行4个异步任务（edit_page_image 和 regenerate_page_image 是异步的，可以作用于多个页面）
+2. **任务队列管理**：如果当前有4个任务在执行，你需要使用 sleep 工具等待一段时间，然后再继续对其他页面发起任务
+3. **异步任务**：edit_page_image 和 regenerate_page_image 会返回 task_id，任务在后台执行，你可以并行处理多个页面
+4. **同步任务**：update_page_description 和 update_page_outline 是同步的，会立即完成，适合对多个页面依次批量更新
 
-## 当前项目信息
+## 当前项目信息（仅作为初始参考，实际操作时可以随时调用 get_project_pages 获取最新数据）
 
 项目ID: {project_id}
 总页数: {len(pages_info)}
@@ -87,11 +86,14 @@ def create_slide_agent(project_id: str, app=None) -> Agent:
 
 ## 使用建议
 
-- 当用户要求编辑图片时，使用 edit_page_image
-- 当用户要求修改描述时，使用 update_page_description
-- 当用户要求修改大纲时，使用 update_page_outline
-- 当用户要求重新生成图片时，使用 regenerate_page_image
-- 如果任务队列已满，使用 sleep 等待后再继续
+- 当用户提出「整体优化」或「全局修改」需求时：
+  - 先调用 **get_project_pages** 获取所有页面的信息和结构
+  - 根据用户意图，选择一组页面（可以按索引或标题识别）进行批量修改
+- 当用户要求编辑某些页面的图片时，使用 **edit_page_image**，必要时对多页重复调用（注意并发限制和 sleep）
+- 当用户要求统一调整多页描述时，使用 **update_page_description**，逐页更新
+- 当用户要求统一调整多页大纲结构时，使用 **update_page_outline**，逐页更新
+- 当用户要求重新生成多页图片时，使用 **regenerate_page_image**，可以对多个页面发起任务
+- 如果任务队列已满，使用 **sleep** 等待后再继续对剩余页面发起任务
 """
     
     agent = Agent(
