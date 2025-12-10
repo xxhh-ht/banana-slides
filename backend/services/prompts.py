@@ -291,6 +291,10 @@ def get_image_edit_prompt(edit_instruction: str, original_description: str = Non
         格式化后的 prompt 字符串
     """
     if original_description:
+        # 删除"其他页面素材："之后的内容，避免被前面的图影响
+        if "其他页面素材" in original_description:
+            original_description = original_description.split("其他页面素材")[0].strip()
+        
         prompt = (f"""\
 该PPT页面的原始页面描述为：
 {original_description}
