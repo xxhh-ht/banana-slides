@@ -6,7 +6,7 @@
 
 import pytest
 import time
-from tests.conftest import assert_success_response
+from conftest import assert_success_response
 
 
 class TestFullWorkflow:
