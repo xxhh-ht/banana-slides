@@ -30,7 +30,7 @@ class GenAIImageProvider(ImageProvider):
         # 构建 HttpOptions
         http_options = types.HttpOptions(
             base_url=api_base,
-            timeout=timeout
+            # timeout=timeout
         ) if api_base else types.HttpOptions(timeout=timeout)
         
         self.client = genai.Client(
