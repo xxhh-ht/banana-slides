@@ -12,6 +12,7 @@ from datetime import datetime
 from io import BytesIO
 from typing import Optional
 from PIL import Image
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 logger = logging.getLogger(__name__)
 
@@ -74,6 +75,12 @@ class VolcengineInpaintingProvider:
         # 但基于用户的AK/SK应该已经有权限
         return ""
     
+    @retry(
+        stop=stop_after_attempt(3),  # 最多重试3次
+        wait=wait_exponential(multiplier=1, min=2, max=10),  # 指数避让: 2s, 4s, 8s
+        retry=retry_if_exception_type((requests.exceptions.RequestException, Exception)),
+        reraise=True
+    )
     def inpaint_image(
         self,
         original_image: Image.Image,
@@ -81,7 +88,7 @@ class VolcengineInpaintingProvider:
         inpaint_mode: str = "remove"
     ) -> Optional[Image.Image]:
         """
-        使用掩码消除图像中的指定区域
+        使用掩码消除图像中的指定区域（带指数避让重试）
         
         Args:
             original_image: 原始图像

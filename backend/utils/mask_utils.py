@@ -40,6 +40,7 @@ def create_mask_from_bboxes(
         logger.info(f"创建掩码图像，尺寸: {image_size}, bbox数量: {len(bboxes)}")
         
         # 绘制每个 bbox 为白色区域
+        bbox_list = []  # 用于记录所有bbox坐标
         for i, bbox in enumerate(bboxes):
             # 解析不同格式的 bbox
             if isinstance(bbox, dict):
@@ -65,12 +66,27 @@ def create_mask_from_bboxes(
                 logger.warning(f"无法识别的 bbox 格式: {bbox}")
                 continue
             
-            # 应用扩展
+            # 记录原始坐标
+            x1_orig, y1_orig, x2_orig, y2_orig = x1, y1, x2, y2
+            
+            # 应用扩展或收缩
             if expand_pixels > 0:
+                # 扩展
                 x1 = max(0, x1 - expand_pixels)
                 y1 = max(0, y1 - expand_pixels)
                 x2 = min(image_size[0], x2 + expand_pixels)
                 y2 = min(image_size[1], y2 + expand_pixels)
+            elif expand_pixels < 0:
+                # 收缩（向内收缩）
+                shrink = abs(expand_pixels)
+                x1 = x1 + shrink
+                y1 = y1 + shrink
+                x2 = x2 - shrink
+                y2 = y2 - shrink
+                # 确保收缩后仍然有效（宽度和高度必须大于0）
+                if x2 <= x1 or y2 <= y1:
+                    logger.warning(f"bbox {i+1} 收缩后无效: ({x1}, {y1}, {x2}, {y2})，跳过")
+                    continue
             
             # 确保坐标在图像范围内
             x1 = max(0, min(x1, image_size[0]))
@@ -78,9 +94,28 @@ def create_mask_from_bboxes(
             x2 = max(0, min(x2, image_size[0]))
             y2 = max(0, min(y2, image_size[1]))
             
+            # 再次检查有效性
+            if x2 <= x1 or y2 <= y1:
+                logger.warning(f"bbox {i+1} 最终坐标无效: ({x1}, {y1}, {x2}, {y2})，跳过")
+                continue
+            
             # 绘制矩形
             draw.rectangle([x1, y1, x2, y2], fill=mask_color)
-            logger.debug(f"bbox {i+1}: ({x1}, {y1}, {x2}, {y2})")
+            width = x2 - x1
+            height = y2 - y1
+            if expand_pixels > 0:
+                bbox_list.append(f"  [{i+1}] 原始: ({x1_orig}, {y1_orig}, {x2_orig}, {y2_orig}) -> 扩展后: ({x1}, {y1}, {x2}, {y2}) 尺寸: {width}x{height}")
+            elif expand_pixels < 0:
+                bbox_list.append(f"  [{i+1}] 原始: ({x1_orig}, {y1_orig}, {x2_orig}, {y2_orig}) -> 收缩后: ({x1}, {y1}, {x2}, {y2}) 尺寸: {width}x{height}")
+            else:
+                bbox_list.append(f"  [{i+1}] ({x1}, {y1}, {x2}, {y2}) 尺寸: {width}x{height}")
+            logger.debug(f"bbox {i+1}: ({x1}, {y1}, {x2}, {y2}) 尺寸: {width}x{height}")
+        
+        # 输出所有bbox的详细信息
+        if bbox_list:
+            logger.info(f"添加了 {len(bbox_list)} 个bbox的mask:")
+            for bbox_info in bbox_list:
+                logger.info(bbox_info)
         
         logger.info(f"掩码图像创建完成")
         return mask

@@ -62,7 +62,8 @@ class InpaintingService:
         expand_pixels: int = 5,
         merge_bboxes: bool = False,
         merge_threshold: int = 10,
-        use_retry: bool = True
+        use_retry: bool = True,
+        save_mask_path: Optional[str] = None
     ) -> Optional[Image.Image]:
         """
         根据边界框列表消除图像中的指定区域
@@ -110,6 +111,14 @@ class InpaintingService:
             )
             
             logger.info(f"掩码图像已生成，尺寸: {mask.size}")
+            
+            # 保存mask图像（如果指定了路径）
+            if save_mask_path:
+                try:
+                    mask.save(save_mask_path)
+                    logger.info(f"📷 Mask图像已保存: {save_mask_path}")
+                except Exception as e:
+                    logger.warning(f"⚠️ 保存mask图像失败: {e}")
             
             # 调用火山引擎 inpainting 服务
             if use_retry:

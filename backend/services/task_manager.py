@@ -29,8 +29,20 @@ class TaskManager:
         with self.lock:
             self.active_tasks[task_id] = future
         
-        # Add callback to clean up when done
-        future.add_done_callback(lambda f: self._cleanup_task(task_id))
+        # Add callback to clean up when done and log exceptions
+        future.add_done_callback(lambda f: self._task_done_callback(task_id, f))
+    
+    def _task_done_callback(self, task_id: str, future):
+        """Handle task completion and log any exceptions"""
+        try:
+            # Check if task raised an exception
+            exception = future.exception()
+            if exception:
+                logger.error(f"Task {task_id} failed with exception: {exception}", exc_info=exception)
+        except Exception as e:
+            logger.error(f"Error in task callback for {task_id}: {e}", exc_info=True)
+        finally:
+            self._cleanup_task(task_id)
     
     def _cleanup_task(self, task_id: str):
         """Clean up completed task"""
@@ -1021,3 +1033,179 @@ def export_editable_pptx_task(task_id: str, project_id: str, filename: str,
                             logger.debug(f"Cleaned up temporary background: {bg_path}")
                         except Exception as e:
                             logger.warning(f"Failed to clean up temporary background: {str(e)}")
+
+
+def export_editable_pptx_with_recursive_analysis_task(
+    task_id: str, 
+    project_id: str, 
+    filename: str,
+    file_service,
+    max_depth: int = 2,
+    max_workers: int = 4,
+    app=None
+):
+    """
+    使用递归图片可编辑化分析导出可编辑PPTX的后台任务
+    
+    这是新的架构方法，使用ImageEditabilityService进行递归版面分析。
+    与旧方法的区别：
+    - 不再假设图片是16:9
+    - 支持任意尺寸和分辨率
+    - 递归分析图片中的子图和图表
+    - 更智能的坐标映射和元素提取
+    - 不需要 ai_service（使用 ImageEditabilityService 和 MinerU）
+    
+    Args:
+        task_id: 任务ID
+        project_id: 项目ID
+        filename: 输出文件名
+        file_service: 文件服务实例
+        max_depth: 最大递归深度
+        max_workers: 并发处理数
+        app: Flask应用实例
+    """
+    logger.info(f"🚀 Task {task_id} started: export_editable_pptx_with_recursive_analysis (project={project_id}, depth={max_depth}, workers={max_workers})")
+    
+    if app is None:
+        raise ValueError("Flask app instance must be provided")
+    
+    with app.app_context():
+        import os
+        from datetime import datetime
+        from PIL import Image
+        from models import Project
+        from services.export_service import ExportService
+        
+        logger.info(f"开始递归分析导出任务 {task_id} for project {project_id}")
+        
+        try:
+            # Get project
+            project = Project.query.get(project_id)
+            if not project:
+                raise ValueError(f'Project {project_id} not found')
+            
+            # Get all pages with images
+            pages = Page.query.filter_by(project_id=project_id).order_by(Page.order_index).all()
+            if not pages:
+                raise ValueError('No pages found for project')
+            
+            image_paths = []
+            for page in pages:
+                if page.generated_image_path:
+                    img_path = file_service.get_absolute_path(page.generated_image_path)
+                    if os.path.exists(img_path):
+                        image_paths.append(img_path)
+            
+            if not image_paths:
+                raise ValueError('No generated images found for project')
+            
+            logger.info(f"找到 {len(image_paths)} 张图片")
+            
+            # 初始化任务进度
+            task = Task.query.get(task_id)
+            total_steps = 3  # 1: 递归分析, 2: 创建PPTX, 3: 完成
+            task.set_progress({
+                "total": total_steps,
+                "completed": 0,
+                "failed": 0,
+                "current_step": "开始递归分析..."
+            })
+            db.session.commit()
+            
+            # Step 1: 使用递归分析方法创建可编辑PPTX
+            logger.info("Step 1: 使用递归分析方法处理图片...")
+            
+            # 准备输出路径
+            exports_dir = os.path.join(app.config['UPLOAD_FOLDER'], project_id, 'exports')
+            os.makedirs(exports_dir, exist_ok=True)
+            
+            # Handle filename collision
+            if not filename.endswith('.pptx'):
+                filename += '.pptx'
+            
+            output_path = os.path.join(exports_dir, filename)
+            if os.path.exists(output_path):
+                base_name = filename.rsplit('.', 1)[0]
+                timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+                filename = f"{base_name}_{timestamp}.pptx"
+                output_path = os.path.join(exports_dir, filename)
+                logger.info(f"文件名冲突，使用新文件名: {filename}")
+            
+            # 获取MinerU配置
+            mineru_token = app.config.get('MINERU_TOKEN')
+            mineru_api_base = app.config.get('MINERU_API_BASE', 'https://mineru.net')
+            
+            if not mineru_token:
+                raise ValueError('MinerU token not configured')
+            
+            # 获取第一张图片的尺寸作为参考
+            first_img = Image.open(image_paths[0])
+            slide_width, slide_height = first_img.size
+            first_img.close()
+            
+            logger.info(f"幻灯片尺寸: {slide_width}x{slide_height}")
+            logger.info(f"递归深度: {max_depth}, 并发数: {max_workers}")
+            
+            # 更新进度
+            task = Task.query.get(task_id)
+            prog = task.get_progress()
+            prog['completed'] = 1
+            prog['current_step'] = f"递归分析图片中（深度={max_depth}）..."
+            task.set_progress(prog)
+            db.session.commit()
+            
+            # Step 2: 调用新的导出方法
+            logger.info("Step 2: 创建可编辑PPTX...")
+            ExportService.create_editable_pptx_with_recursive_analysis(
+                image_paths=image_paths,
+                output_file=output_path,
+                slide_width_pixels=slide_width,
+                slide_height_pixels=slide_height,
+                mineru_token=mineru_token,
+                mineru_api_base=mineru_api_base,
+                max_depth=max_depth,
+                max_workers=max_workers
+            )
+            
+            logger.info(f"✓ 可编辑PPTX已创建: {output_path}")
+            
+            # 更新进度
+            task = Task.query.get(task_id)
+            prog = task.get_progress()
+            prog['completed'] = 2
+            prog['current_step'] = "完成"
+            task.set_progress(prog)
+            db.session.commit()
+            
+            # Step 3: 标记任务完成
+            download_path = f"/files/{project_id}/exports/{filename}"
+            
+            task = Task.query.get(task_id)
+            if task:
+                task.status = 'COMPLETED'
+                task.completed_at = datetime.utcnow()
+                task.set_progress({
+                    "total": total_steps,
+                    "completed": total_steps,
+                    "failed": 0,
+                    "current_step": "完成",
+                    "download_url": download_path,
+                    "filename": filename,
+                    "method": "recursive_analysis",
+                    "max_depth": max_depth
+                })
+                db.session.commit()
+                logger.info(f"✓ 任务 {task_id} 完成 - 递归分析导出成功（深度={max_depth}）")
+        
+        except Exception as e:
+            import traceback
+            error_detail = traceback.format_exc()
+            logger.error(f"✗ 任务 {task_id} 失败: {error_detail}")
+            
+            # 标记任务失败
+            task = Task.query.get(task_id)
+            if task:
+                task.status = 'FAILED'
+                task.error_message = str(e)
+                task.completed_at = datetime.utcnow()
+                db.session.commit()

@@ -291,3 +291,7 @@ def extract_elements_for_pptx(
     mapper = CoordinateMapper(mineru_result_dir)
     return mapper.get_scaled_page_elements(page_index, slide_size, use_layout_coords=True)
 
+
+
+
+
