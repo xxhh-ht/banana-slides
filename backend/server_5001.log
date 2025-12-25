@@ -1,0 +1,754 @@
+2025-12-25 11:42:43,197 [INFO] root - Loaded AI_PROVIDER_FORMAT from settings: gemini
+2025-12-25 11:42:43,197 [INFO] root - Loaded API_BASE from settings: https://generativelanguage.googleapis.com
+2025-12-25 11:42:43,197 [INFO] root - Loaded API key from settings
+2025-12-25 11:42:43,197 [INFO] root - Loaded image settings: 2K, 16:9
+2025-12-25 11:42:43,197 [INFO] root - Loaded worker settings: desc=5, img=8
+2025-12-25 11:42:43,197 [INFO] root - 
+╔══════════════════════════════════════╗
+║   🍌 Banana Slides API Server 🍌   ║
+╚══════════════════════════════════════╝
+Server starting on: http://localhost:5001
+Output Language: zh
+Environment: production
+Debug mode: False
+API Base URL: http://localhost:5001/api
+Database: sqlite:////Volumes/MacSD/GitHub/banana-slides/backend/instance/database.db
+Uploads: /Volumes/MacSD/GitHub/banana-slides/uploads
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-12-25 11:42:45,399 [INFO] werkzeug - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.69:5001
+2025-12-25 11:42:45,399 [INFO] werkzeug - [33mPress CTRL+C to quit[0m
+2025-12-25 11:42:45,400 [INFO] werkzeug -  * Restarting with stat
+2025-12-25 11:42:46,352 [INFO] root - Loaded AI_PROVIDER_FORMAT from settings: gemini
+2025-12-25 11:42:46,352 [INFO] root - Loaded API_BASE from settings: https://generativelanguage.googleapis.com
+2025-12-25 11:42:46,352 [INFO] root - Loaded API key from settings
+2025-12-25 11:42:46,352 [INFO] root - Loaded image settings: 2K, 16:9
+2025-12-25 11:42:46,352 [INFO] root - Loaded worker settings: desc=5, img=8
+2025-12-25 11:42:46,353 [INFO] root - 
+╔══════════════════════════════════════╗
+║   🍌 Banana Slides API Server 🍌   ║
+╚══════════════════════════════════════╝
+Server starting on: http://localhost:5001
+Output Language: zh
+Environment: production
+Debug mode: False
+API Base URL: http://localhost:5001/api
+Database: sqlite:////Volumes/MacSD/GitHub/banana-slides/backend/instance/database.db
+Uploads: /Volumes/MacSD/GitHub/banana-slides/uploads
+2025-12-25 11:42:46,403 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:42:46] "GET /health HTTP/1.1" 200 -
+2025-12-25 11:47:28,566 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:47:28] "GET / HTTP/1.1" 200 -
+2025-12-25 11:47:28,738 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:47:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-25 11:47:37,039 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:47:37] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:47:37,051 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:47:37] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:47:37,098 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:47:37] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:47:37,113 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:47:37] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:51:54,455 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "[35m[1mPOST /api/projects HTTP/1.1[0m" 201 -
+2025-12-25 11:51:54,468 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "POST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/template HTTP/1.1" 200 -
+2025-12-25 11:51:54,476 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:51:54,517 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:51:54,520 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:51:54,521 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:51:54,524 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:54] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:51:58,046 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:51:58] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:51:58,060 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:51:58,060 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:51:58,060 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:51:58,060 [INFO] services.ai_providers - Using Gemini format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:51:58,119 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:51:58,119 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:51:58,119 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:51:58,119 [INFO] services.ai_providers - Using Gemini format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:51:58,127 [INFO] controllers.project_controller - No reference files found for project a3a415c0-2847-40f3-9fd8-baa13c161912
+2025-12-25 11:51:58,127 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:52:00,439 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:52:02,747 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:52:03,311 [ERROR] controllers.project_controller - generate_outline failed: RetryError[<Future at 0x1107d6d70 state=finished raised ClientError>]
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_providers/text/genai_provider.py", line 55, in generate_text
+    response = self.client.models.generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 5203, in generate_content
+    response = self._generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 3985, in _generate_content
+    response = self._api_client.request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1388, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1224, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1201, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/errors.py", line 121, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/errors.py", line 146, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/controllers/project_controller.py", line 329, in generate_outline
+    outline = ai_service.parse_outline_text(project_context, language=language)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 255, in parse_outline_text
+    outline = self.generate_json(parse_prompt, thinking_budget=1000)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 175, in generate_json
+    response_text = self.text_provider.generate_text(prompt, thinking_budget=thinking_budget)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1107d6d70 state=finished raised ClientError>]
+2025-12-25 11:52:03,323 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:52:03] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/generate/outline HTTP/1.1[0m" 503 -
+2025-12-25 11:52:03,342 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:52:03] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:52:03,344 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:52:03] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:52:03,348 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:52:03] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:52:03,349 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:52:03] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:53:44,992 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:44] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:53:45,007 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:53:45,007 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:53:45,007 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:53:45,007 [INFO] services.ai_providers - Using Gemini format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:53:45,022 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:53:45,022 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:53:45,022 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:53:45,022 [INFO] services.ai_providers - Using Gemini format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:53:45,032 [INFO] controllers.project_controller - No reference files found for project a3a415c0-2847-40f3-9fd8-baa13c161912
+2025-12-25 11:53:45,032 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:53:47,338 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:53:49,645 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:53:49,948 [ERROR] controllers.project_controller - generate_outline failed: RetryError[<Future at 0x110808100 state=finished raised ConnectTimeout>]
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/http_proxy.py", line 316, in handle_request
+    stream = stream.start_tls(**kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 376, in start_tls
+    return self._stream.start_tls(ssl_context, server_hostname, timeout)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: _ssl.c:1000: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_providers/text/genai_provider.py", line 55, in generate_text
+    response = self.client.models.generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 5203, in generate_content
+    response = self._generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 3985, in _generate_content
+    response = self._api_client.request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1388, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1224, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1194, in _request_once
+    response = self._httpx_client.request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: _ssl.c:1000: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/controllers/project_controller.py", line 329, in generate_outline
+    outline = ai_service.parse_outline_text(project_context, language=language)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 255, in parse_outline_text
+    outline = self.generate_json(parse_prompt, thinking_budget=1000)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 175, in generate_json
+    response_text = self.text_provider.generate_text(prompt, thinking_budget=thinking_budget)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x110808100 state=finished raised ConnectTimeout>]
+2025-12-25 11:53:49,959 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:49] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/generate/outline HTTP/1.1[0m" 503 -
+2025-12-25 11:53:49,976 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:49] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:49,976 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:49] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:53:49,981 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:49] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:49,982 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:49] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:53:57,307 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:57] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages HTTP/1.1[0m" 201 -
+2025-12-25 11:53:57,315 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:57] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:58,865 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:58] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages HTTP/1.1[0m" 201 -
+2025-12-25 11:53:58,869 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:58] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:59,272 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages HTTP/1.1[0m" 201 -
+2025-12-25 11:53:59,276 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:59,475 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages HTTP/1.1[0m" 201 -
+2025-12-25 11:53:59,483 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:59,658 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages HTTP/1.1[0m" 201 -
+2025-12-25 11:53:59,671 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:53:59,859 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages HTTP/1.1[0m" 201 -
+2025-12-25 11:53:59,864 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:53:59] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:02,874 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:02] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:54:02,886 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:54:02,886 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:54:02,886 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:54:02,886 [INFO] services.ai_providers - Using Gemini format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:54:02,899 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:54:02,899 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:54:02,899 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:54:02,899 [INFO] services.ai_providers - Using Gemini format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:54:02,908 [INFO] controllers.project_controller - No reference files found for project a3a415c0-2847-40f3-9fd8-baa13c161912
+2025-12-25 11:54:02,908 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:54:05,437 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:54:07,634 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:54:07,806 [ERROR] controllers.project_controller - generate_outline failed: RetryError[<Future at 0x1109b6020 state=finished raised ClientError>]
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_providers/text/genai_provider.py", line 55, in generate_text
+    response = self.client.models.generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 5203, in generate_content
+    response = self._generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 3985, in _generate_content
+    response = self._api_client.request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1388, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1224, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1201, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/errors.py", line 121, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/errors.py", line 146, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/controllers/project_controller.py", line 329, in generate_outline
+    outline = ai_service.parse_outline_text(project_context, language=language)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 255, in parse_outline_text
+    outline = self.generate_json(parse_prompt, thinking_budget=1000)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 175, in generate_json
+    response_text = self.text_provider.generate_text(prompt, thinking_budget=thinking_budget)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1109b6020 state=finished raised ClientError>]
+2025-12-25 11:54:07,808 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:07] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/generate/outline HTTP/1.1[0m" 503 -
+2025-12-25 11:54:07,835 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:07] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:54:07,835 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:07] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:07,839 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:07] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:54:07,839 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:07] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:20,176 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:20] "DELETE /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages/f6d82ca8-46a0-4a94-9692-16f52e1f5b5d HTTP/1.1" 200 -
+2025-12-25 11:54:20,183 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:20] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:21,944 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:21] "DELETE /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages/0ab78f80-9af2-456a-9c6f-c8deb148ef4c HTTP/1.1" 200 -
+2025-12-25 11:54:21,950 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:21] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:23,298 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:23] "DELETE /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages/e46dd76b-0a63-4d9a-b371-e2d7bcbf5ffe HTTP/1.1" 200 -
+2025-12-25 11:54:23,302 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:23] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:24,607 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:24] "DELETE /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages/27345996-3549-4f89-8e54-49e7341b6465 HTTP/1.1" 200 -
+2025-12-25 11:54:24,612 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:24] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:26,178 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:26] "DELETE /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages/c7a8050a-f1a9-4a80-ba7e-84da720d7b80 HTTP/1.1" 200 -
+2025-12-25 11:54:26,214 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:26] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:27,897 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:27] "DELETE /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/pages/43e0950f-c953-4772-9451-a75cb1024807 HTTP/1.1" 200 -
+2025-12-25 11:54:27,912 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:27] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:28,865 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:28] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:54:28,880 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:54:28,880 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:54:28,880 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:54:28,880 [INFO] services.ai_providers - Using Gemini format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:54:28,995 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_KEY from app.config: your-api-key-here
+2025-12-25 11:54:28,995 [INFO] services.ai_providers - [CONFIG] Using GOOGLE_API_BASE from app.config: https://generativelanguage.googleapis.com
+2025-12-25 11:54:28,995 [INFO] services.ai_providers - Provider config - format: gemini, api_base: https://generativelanguage.googleapis.com, api_key: ***
+2025-12-25 11:54:28,995 [INFO] services.ai_providers - Using Gemini format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:54:29,004 [INFO] controllers.project_controller - No reference files found for project a3a415c0-2847-40f3-9fd8-baa13c161912
+2025-12-25 11:54:29,004 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:54:31,312 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:54:33,619 [INFO] google_genai.models - AFC is enabled with max remote calls: 10.
+2025-12-25 11:54:33,922 [ERROR] controllers.project_controller - generate_outline failed: RetryError[<Future at 0x1109cccd0 state=finished raised ConnectTimeout>]
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/http_proxy.py", line 316, in handle_request
+    stream = stream.start_tls(**kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 376, in start_tls
+    return self._stream.start_tls(ssl_context, server_hostname, timeout)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_backends/sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: _ssl.c:1000: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_providers/text/genai_provider.py", line 55, in generate_text
+    response = self.client.models.generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 5203, in generate_content
+    response = self._generate_content(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/models.py", line 3985, in _generate_content
+    response = self._api_client.request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1388, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1224, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/google/genai/_api_client.py", line 1194, in _request_once
+    response = self._httpx_client.request(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: _ssl.c:1000: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/controllers/project_controller.py", line 329, in generate_outline
+    outline = ai_service.parse_outline_text(project_context, language=language)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 255, in parse_outline_text
+    outline = self.generate_json(parse_prompt, thinking_budget=1000)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/opt/homebrew/Cellar/python@3.10/3.10.19_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+  File "/Volumes/MacSD/GitHub/banana-slides/backend/services/ai_service.py", line 175, in generate_json
+    response_text = self.text_provider.generate_text(prompt, thinking_budget=thinking_budget)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 338, in wrapped_f
+    return copy(f, *args, **kw)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 378, in iter
+    result = action(retry_state)
+  File "/Volumes/MacSD/GitHub/banana-slides/venv/lib/python3.10/site-packages/tenacity/__init__.py", line 421, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x1109cccd0 state=finished raised ConnectTimeout>]
+2025-12-25 11:54:33,925 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:33] "[35m[1mPOST /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/generate/outline HTTP/1.1[0m" 503 -
+2025-12-25 11:54:33,957 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:33] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:33,958 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:33] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:54:33,961 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:33] "GET /api/reference-files/project/a3a415c0-2847-40f3-9fd8-baa13c161912 HTTP/1.1" 200 -
+2025-12-25 11:54:33,962 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:33] "GET /api/projects/a3a415c0-2847-40f3-9fd8-baa13c161912/materials HTTP/1.1" 200 -
+2025-12-25 11:54:39,347 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:39] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:54:39,353 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:39] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:54:39,356 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:39] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:54:39,358 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:39] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:54:40,951 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:40] "GET /api/settings HTTP/1.1" 200 -
+2025-12-25 11:54:40,957 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:54:40] "GET /api/settings HTTP/1.1" 200 -
+2025-12-25 11:55:41,015 [INFO] controllers.settings_controller - Updated AI_PROVIDER_FORMAT to: openai
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated API_BASE to: https://www.dmxapi.cn/v1
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated API key from settings
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated image settings: 2K, 16:9
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated worker settings: desc=5, img=8
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated TEXT_MODEL to: gemini-3-flash-preview
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated IMAGE_MODEL to: gemini-3-pro-image-preview
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated MINERU_API_BASE to: https://mineru.net
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated MINERU_TOKEN from settings
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Updated IMAGE_CAPTION_MODEL to: gemini-3-flash-preview
+2025-12-25 11:55:41,016 [INFO] controllers.settings_controller - Settings updated successfully
+2025-12-25 11:55:41,016 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:41] "PUT /api/settings HTTP/1.1" 200 -
+2025-12-25 11:55:48,326 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:48] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:55:48,330 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:48] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:55:48,333 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:48] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:55:48,340 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:48] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:55:57,099 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:57] "[35m[1mPOST /api/projects HTTP/1.1[0m" 201 -
+2025-12-25 11:55:57,119 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:55:57,145 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/materials HTTP/1.1" 200 -
+2025-12-25 11:55:57,148 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:57] "GET /api/reference-files/project/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:55:57,150 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/materials HTTP/1.1" 200 -
+2025-12-25 11:55:57,151 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:57] "GET /api/reference-files/project/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:55:59,378 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:55:59] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:55:59,388 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:55:59,388 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:55:59,388 [INFO] services.ai_providers - Using OpenAI format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:55:59,498 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:55:59,498 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:55:59,498 [INFO] services.ai_providers - Using OpenAI format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:55:59,498 [WARNING] services.ai_providers - OpenAI format only supports 1K resolution, 4K is not available
+2025-12-25 11:55:59,510 [INFO] controllers.project_controller - No reference files found for project 928cb467-284d-4426-a2f4-6443e5a4d0f8
+2025-12-25 11:56:22,040 [INFO] controllers.project_controller - 大纲生成完成: 项目 928cb467-284d-4426-a2f4-6443e5a4d0f8, 创建了 19 个页面
+2025-12-25 11:56:22,044 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:22] "POST /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/generate/outline HTTP/1.1" 200 -
+2025-12-25 11:56:22,050 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:22] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:22,084 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:22] "GET /api/reference-files/project/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:22,085 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:22] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/materials HTTP/1.1" 200 -
+2025-12-25 11:56:22,090 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:22] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/materials HTTP/1.1" 200 -
+2025-12-25 11:56:22,095 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:22] "GET /api/reference-files/project/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:31,514 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:31] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/materials HTTP/1.1" 200 -
+2025-12-25 11:56:31,518 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:31] "GET /api/reference-files/project/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:31,520 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:31] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/materials HTTP/1.1" 200 -
+2025-12-25 11:56:31,521 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:31] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:31,523 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:31] "GET /api/reference-files/project/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:31,524 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:31] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:42,427 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:42] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:56:42,436 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:56:42,436 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:56:42,436 [INFO] services.ai_providers - Using OpenAI format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:56:42,454 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:56:42,454 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:56:42,454 [INFO] services.ai_providers - Using OpenAI format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:56:42,454 [WARNING] services.ai_providers - OpenAI format only supports 1K resolution, 4K is not available
+2025-12-25 11:56:42,471 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:42] "[35m[1mPOST /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/generate/descriptions HTTP/1.1[0m" 202 -
+2025-12-25 11:56:42,472 [INFO] services.task_manager - Task 09d97c1b-15df-4867-893b-e17121f8ddc8 status updated to PROCESSING
+2025-12-25 11:56:44,478 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:44] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:44,487 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:44] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:46,498 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:46] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:46,509 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:46] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:48,115 [INFO] services.task_manager - Description Progress: 1/19 pages completed
+2025-12-25 11:56:48,188 [INFO] services.task_manager - Description Progress: 2/19 pages completed
+2025-12-25 11:56:48,518 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:48] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:48,528 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:48] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:48,985 [INFO] services.task_manager - Description Progress: 3/19 pages completed
+2025-12-25 11:56:50,538 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:50] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:50,551 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:50] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:50,554 [INFO] services.task_manager - Description Progress: 4/19 pages completed
+2025-12-25 11:56:51,104 [INFO] services.task_manager - Description Progress: 5/19 pages completed
+2025-12-25 11:56:52,567 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:52] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:52,581 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:52] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:54,600 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:54] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:54,615 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:54] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:55,207 [INFO] services.task_manager - Description Progress: 6/19 pages completed
+2025-12-25 11:56:57,306 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:56:57,322 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:56:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:56:57,657 [INFO] services.task_manager - Description Progress: 7/19 pages completed
+2025-12-25 11:56:57,893 [INFO] services.task_manager - Description Progress: 8/19 pages completed
+2025-12-25 11:56:58,237 [INFO] services.task_manager - Description Progress: 9/19 pages completed
+2025-12-25 11:56:59,354 [INFO] services.task_manager - Description Progress: 10/19 pages completed
+2025-12-25 11:57:00,279 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:00] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:00,309 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:00] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:02,150 [INFO] services.task_manager - Description Progress: 11/19 pages completed
+2025-12-25 11:57:02,325 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:02] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:02,358 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:02] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:03,609 [INFO] services.task_manager - Description Progress: 12/19 pages completed
+2025-12-25 11:57:04,386 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:04] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:04,428 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:04] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:06,119 [INFO] services.task_manager - Description Progress: 13/19 pages completed
+2025-12-25 11:57:06,126 [INFO] services.task_manager - Description Progress: 14/19 pages completed
+2025-12-25 11:57:06,128 [INFO] services.task_manager - Description Progress: 15/19 pages completed
+2025-12-25 11:57:06,475 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:06] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:06,501 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:06] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:08,542 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:08] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:08,573 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:08] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:10,617 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:10] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:10,643 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:10] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:12,532 [INFO] services.task_manager - Description Progress: 16/19 pages completed
+2025-12-25 11:57:12,672 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:12] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:12,736 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:12] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:12,804 [INFO] services.task_manager - Description Progress: 17/19 pages completed
+2025-12-25 11:57:13,150 [INFO] services.task_manager - Description Progress: 18/19 pages completed
+2025-12-25 11:57:13,876 [INFO] services.task_manager - Description Progress: 19/19 pages completed
+2025-12-25 11:57:13,877 [INFO] services.task_manager - Task 09d97c1b-15df-4867-893b-e17121f8ddc8 COMPLETED - 19 pages generated, 0 failed
+2025-12-25 11:57:13,877 [INFO] services.task_manager - Project 928cb467-284d-4426-a2f4-6443e5a4d0f8 status updated to DESCRIPTIONS_GENERATED
+2025-12-25 11:57:14,767 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:14] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/09d97c1b-15df-4867-893b-e17121f8ddc8 HTTP/1.1" 200 -
+2025-12-25 11:57:14,798 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:14] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:14,846 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:14] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:21,251 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:21] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:21,251 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:21] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/279175be-2f6d-4c43-8e90-e95a96769839/image-versions HTTP/1.1" 200 -
+2025-12-25 11:57:21,253 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:21] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:21,255 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:21] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/279175be-2f6d-4c43-8e90-e95a96769839/image-versions HTTP/1.1" 200 -
+2025-12-25 11:57:23,288 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:23] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:57:23,313 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:57:23,313 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:57:23,313 [INFO] services.ai_providers - Using OpenAI format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:57:23,328 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:57:23,328 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:57:23,328 [INFO] services.ai_providers - Using OpenAI format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:57:23,328 [WARNING] services.ai_providers - OpenAI format only supports 1K resolution, 4K is not available
+2025-12-25 11:57:23,343 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:23] "[35m[1mPOST /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/generate/images HTTP/1.1[0m" 202 -
+2025-12-25 11:57:23,350 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:23] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/3948bbaf-8f17-4d6c-9aa1-f8bd8aad0642 HTTP/1.1" 200 -
+2025-12-25 11:57:29,320 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:29] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:29,323 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:29] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:31,525 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:31] "POST /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/template HTTP/1.1" 200 -
+2025-12-25 11:57:31,530 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:31] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:57:31,539 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:31] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:31,541 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:31] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/279175be-2f6d-4c43-8e90-e95a96769839/image-versions HTTP/1.1" 200 -
+2025-12-25 11:57:33,214 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:33] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:33,216 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:33] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:57:41,715 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:41] "GET /api/output-language HTTP/1.1" 200 -
+2025-12-25 11:57:41,731 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:57:41,731 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:57:41,731 [INFO] services.ai_providers - Using OpenAI format for text generation, model: gemini-3-flash-preview
+2025-12-25 11:57:41,748 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_KEY from app.config: sk-pZkgk5DXB2Zn1mlFpCN2bCY7YqI7jKR2NkPWfQhZEbqHtNuF
+2025-12-25 11:57:41,748 [INFO] services.ai_providers - [CONFIG] Using OPENAI_API_BASE from app.config: https://www.dmxapi.cn/v1
+2025-12-25 11:57:41,748 [INFO] services.ai_providers - Using OpenAI format for image generation, model: gemini-3-pro-image-preview
+2025-12-25 11:57:41,748 [WARNING] services.ai_providers - OpenAI format only supports 1K resolution, 4K is not available
+2025-12-25 11:57:41,762 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:41] "[35m[1mPOST /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/generate/images HTTP/1.1[0m" 202 -
+2025-12-25 11:57:41,767 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 1/19...
+2025-12-25 11:57:41,770 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:41] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:41,771 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 2/19...
+2025-12-25 11:57:41,776 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 6/19...
+2025-12-25 11:57:41,778 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 3/19...
+2025-12-25 11:57:41,778 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 4/19...
+2025-12-25 11:57:41,779 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 5/19...
+2025-12-25 11:57:41,780 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 8/19...
+2025-12-25 11:57:41,781 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 7/19...
+2025-12-25 11:57:43,782 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:43] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:45,796 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:45] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:47,804 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:47] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:49,875 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:49] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:51,882 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:51] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:53,893 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:53] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:55,903 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:55] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:57,910 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:57:59,923 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:57:59] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:01,932 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:01] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:02,273 [INFO] services.task_manager - ✅ Image generated successfully for page 1
+2025-12-25 11:58:02,327 [INFO] services.task_manager - Image Progress: 1/19 pages completed
+2025-12-25 11:58:02,328 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 9/19...
+2025-12-25 11:58:02,540 [INFO] services.task_manager - ✅ Image generated successfully for page 3
+2025-12-25 11:58:02,586 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 10/19...
+2025-12-25 11:58:02,591 [INFO] services.task_manager - Image Progress: 2/19 pages completed
+2025-12-25 11:58:02,801 [INFO] services.task_manager - ✅ Image generated successfully for page 2
+2025-12-25 11:58:02,851 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 11/19...
+2025-12-25 11:58:02,852 [INFO] services.task_manager - Image Progress: 3/19 pages completed
+2025-12-25 11:58:02,886 [INFO] services.task_manager - ✅ Image generated successfully for page 6
+2025-12-25 11:58:02,943 [INFO] services.task_manager - Image Progress: 4/19 pages completed
+2025-12-25 11:58:02,944 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 12/19...
+2025-12-25 11:58:03,027 [INFO] services.task_manager - ✅ Image generated successfully for page 7
+2025-12-25 11:58:03,084 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 13/19...
+2025-12-25 11:58:03,085 [INFO] services.task_manager - Image Progress: 5/19 pages completed
+2025-12-25 11:58:03,941 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:03] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:04,692 [INFO] services.task_manager - ✅ Image generated successfully for page 4
+2025-12-25 11:58:04,742 [INFO] services.task_manager - Image Progress: 6/19 pages completed
+2025-12-25 11:58:04,743 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 14/19...
+2025-12-25 11:58:05,950 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:05] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:06,048 [INFO] services.task_manager - ✅ Image generated successfully for page 5
+2025-12-25 11:58:06,100 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 15/19...
+2025-12-25 11:58:06,102 [INFO] services.task_manager - Image Progress: 7/19 pages completed
+2025-12-25 11:58:07,958 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:07] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:09,051 [INFO] services.task_manager - ✅ Image generated successfully for page 8
+2025-12-25 11:58:09,104 [INFO] services.task_manager - Image Progress: 8/19 pages completed
+2025-12-25 11:58:09,105 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 16/19...
+2025-12-25 11:58:09,966 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:09] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:11,973 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:11] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:13,982 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:13] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:15,994 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:15] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:18,008 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:18] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:20,021 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:20] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:22,029 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:22] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:22,801 [INFO] services.task_manager - ✅ Image generated successfully for page 12
+2025-12-25 11:58:22,816 [INFO] services.task_manager - ✅ Image generated successfully for page 15
+2025-12-25 11:58:22,996 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 17/19...
+2025-12-25 11:58:22,997 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 18/19...
+2025-12-25 11:58:22,998 [INFO] services.task_manager - Image Progress: 9/19 pages completed
+2025-12-25 11:58:22,999 [INFO] services.task_manager - Image Progress: 10/19 pages completed
+2025-12-25 11:58:23,553 [INFO] services.task_manager - ✅ Image generated successfully for page 13
+2025-12-25 11:58:23,605 [INFO] services.task_manager - 🎨 Calling AI service to generate image for page 19/19...
+2025-12-25 11:58:23,607 [INFO] services.task_manager - Image Progress: 11/19 pages completed
+2025-12-25 11:58:24,042 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:24] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:24,112 [INFO] services.task_manager - ✅ Image generated successfully for page 14
+2025-12-25 11:58:24,166 [INFO] services.task_manager - Image Progress: 12/19 pages completed
+2025-12-25 11:58:26,050 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:26] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:26,131 [INFO] services.task_manager - ✅ Image generated successfully for page 9
+2025-12-25 11:58:26,191 [INFO] services.task_manager - Image Progress: 13/19 pages completed
+2025-12-25 11:58:28,056 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:28] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:29,687 [INFO] services.task_manager - ✅ Image generated successfully for page 10
+2025-12-25 11:58:29,762 [INFO] services.task_manager - Image Progress: 14/19 pages completed
+2025-12-25 11:58:30,064 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:30] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:32,073 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:32] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:34,081 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:34] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:34,169 [INFO] services.task_manager - ✅ Image generated successfully for page 11
+2025-12-25 11:58:34,221 [INFO] services.task_manager - Image Progress: 15/19 pages completed
+2025-12-25 11:58:36,089 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:36] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:38,127 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:38] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:40,140 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:40] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:40,243 [INFO] services.task_manager - ✅ Image generated successfully for page 16
+2025-12-25 11:58:40,299 [INFO] services.task_manager - Image Progress: 16/19 pages completed
+2025-12-25 11:58:42,149 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:42] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:43,457 [INFO] services.task_manager - ✅ Image generated successfully for page 17
+2025-12-25 11:58:43,504 [INFO] services.task_manager - Image Progress: 17/19 pages completed
+2025-12-25 11:58:43,937 [INFO] services.task_manager - ✅ Image generated successfully for page 18
+2025-12-25 11:58:43,992 [INFO] services.task_manager - Image Progress: 18/19 pages completed
+2025-12-25 11:58:44,157 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:44] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:46,069 [INFO] services.task_manager - ✅ Image generated successfully for page 19
+2025-12-25 11:58:46,120 [INFO] services.task_manager - Image Progress: 19/19 pages completed
+2025-12-25 11:58:46,120 [INFO] services.task_manager - Task 42397e03-a7d1-4a5e-9b24-99e125f26a87 COMPLETED - 19 images generated, 0 failed
+2025-12-25 11:58:46,121 [INFO] services.task_manager - Project 928cb467-284d-4426-a2f4-6443e5a4d0f8 status updated to COMPLETED
+2025-12-25 11:58:46,165 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/tasks/42397e03-a7d1-4a5e-9b24-99e125f26a87 HTTP/1.1" 200 -
+2025-12-25 11:58:46,178 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8 HTTP/1.1" 200 -
+2025-12-25 11:58:46,306 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 11:58:46,306 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/8f7a9b47-94ca-4343-a898-801ad3cdd482_1766635084692.png?v=1766606284741 HTTP/1.1" 200 -
+2025-12-25 11:58:46,307 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/15046278-e2ea-442d-a892-40c0bd759072_1766635086049.png?v=1766606286100 HTTP/1.1" 200 -
+2025-12-25 11:58:46,307 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/8ddd2dd3-6207-4776-8cc2-fe4ba661297d_1766635082801.png?v=1766606282850 HTTP/1.1" 200 -
+2025-12-25 11:58:46,307 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/641dad99-2299-4f90-8de2-2f22346e1c63_1766635082541.png?v=1766606282586 HTTP/1.1" 200 -
+2025-12-25 11:58:46,308 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/279175be-2f6d-4c43-8e90-e95a96769839_1766635082273.png?v=1766606282326 HTTP/1.1" 200 -
+2025-12-25 11:58:46,326 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/279175be-2f6d-4c43-8e90-e95a96769839/image-versions HTTP/1.1" 200 -
+2025-12-25 11:58:46,341 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/01ad74ff-8b5d-4834-89ed-20a9ccaa200a_1766635082886.png?v=1766606282942 HTTP/1.1" 200 -
+2025-12-25 11:58:46,350 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/94d19a3a-195c-4d67-be68-c1963a651b4d_1766635083027.png?v=1766606283084 HTTP/1.1" 200 -
+2025-12-25 11:58:46,350 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/111ff426-cf3f-43cc-aa93-91ecdf3450e8_1766635089051.png?v=1766606289103 HTTP/1.1" 200 -
+2025-12-25 11:58:46,350 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/5bf2ab6c-e0fa-42ec-843e-9ed29b636f75_1766635106131.png?v=1766606306190 HTTP/1.1" 200 -
+2025-12-25 11:58:46,352 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/71dc3c8f-0335-49f1-8c75-302983af37a7_1766635109688.png?v=1766606309744 HTTP/1.1" 200 -
+2025-12-25 11:58:46,354 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/c0885f5b-c63f-4d89-ae88-acde491be24d_1766635114169.png?v=1766606314221 HTTP/1.1" 200 -
+2025-12-25 11:58:46,390 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/2cac2958-3d9e-426c-9697-9098af8f65a0_1766635102801.png?v=1766606302999 HTTP/1.1" 200 -
+2025-12-25 11:58:46,403 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/2c2d948d-9d72-4388-ba62-bcfa303dce53_1766635103553.png?v=1766606303605 HTTP/1.1" 200 -
+2025-12-25 11:58:46,403 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/a5f92604-7da8-4b1d-8e22-c6de13b1cfbf_1766635104112.png?v=1766606304165 HTTP/1.1" 200 -
+2025-12-25 11:58:46,404 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/3a660b24-382b-4906-9a59-d798aa681311_1766635102816.png?v=1766606302996 HTTP/1.1" 200 -
+2025-12-25 11:58:46,416 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/7ba92ded-85c6-4001-89e2-30df2d619763_1766635120243.png?v=1766606320299 HTTP/1.1" 200 -
+2025-12-25 11:58:46,419 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/8c948861-39c4-4970-9b15-9bd9d900a917_1766635123457.png?v=1766606323503 HTTP/1.1" 200 -
+2025-12-25 11:58:46,424 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/e4a0a7ad-8a21-48da-a229-4a7cac108471_1766635123938.png?v=1766606323992 HTTP/1.1" 200 -
+2025-12-25 11:58:46,429 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:46] "GET /files/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/28d406ed-24b6-4d66-9aec-48d112f7b3b6_1766635126069.png?v=1766606326119 HTTP/1.1" 200 -
+2025-12-25 11:58:57,179 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:58:57] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/8f7a9b47-94ca-4343-a898-801ad3cdd482/image-versions HTTP/1.1" 200 -
+2025-12-25 11:59:00,400 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:59:00] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/8c948861-39c4-4970-9b15-9bd9d900a917/image-versions HTTP/1.1" 200 -
+2025-12-25 11:59:00,993 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:59:00] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/e4a0a7ad-8a21-48da-a229-4a7cac108471/image-versions HTTP/1.1" 200 -
+2025-12-25 11:59:03,533 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:59:03] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/28d406ed-24b6-4d66-9aec-48d112f7b3b6/image-versions HTTP/1.1" 200 -
+2025-12-25 11:59:06,710 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 11:59:06] "GET /api/projects/928cb467-284d-4426-a2f4-6443e5a4d0f8/pages/279175be-2f6d-4c43-8e90-e95a96769839/image-versions HTTP/1.1" 200 -

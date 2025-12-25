@@ -1,0 +1,47 @@
+2025-12-25 12:25:33,774 [INFO] root - Loaded AI_PROVIDER_FORMAT from settings: openai
+2025-12-25 12:25:33,774 [INFO] root - Loaded API_BASE from settings: https://www.dmxapi.cn/v1
+2025-12-25 12:25:33,774 [INFO] root - Loaded API key from settings
+2025-12-25 12:25:33,774 [INFO] root - Loaded image settings: 2K, 16:9
+2025-12-25 12:25:33,774 [INFO] root - Loaded worker settings: desc=5, img=8
+2025-12-25 12:25:33,775 [INFO] root - 
+╔══════════════════════════════════════╗
+║   🍌 Banana Slides API Server 🍌   ║
+╚══════════════════════════════════════╝
+Server starting on: http://localhost:5001
+Output Language: zh
+Environment: production
+Debug mode: False
+API Base URL: http://localhost:5001/api
+Database: sqlite:////Volumes/MacSD/GitHub/banana-slides/backend/instance/database.db
+Uploads: /Volumes/MacSD/GitHub/banana-slides/uploads
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-12-25 12:25:33,781 [INFO] werkzeug - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.69:5001
+2025-12-25 12:25:33,781 [INFO] werkzeug - [33mPress CTRL+C to quit[0m
+2025-12-25 12:25:33,781 [INFO] werkzeug -  * Restarting with stat
+2025-12-25 12:25:34,708 [INFO] root - Loaded AI_PROVIDER_FORMAT from settings: openai
+2025-12-25 12:25:34,708 [INFO] root - Loaded API_BASE from settings: https://www.dmxapi.cn/v1
+2025-12-25 12:25:34,708 [INFO] root - Loaded API key from settings
+2025-12-25 12:25:34,708 [INFO] root - Loaded image settings: 2K, 16:9
+2025-12-25 12:25:34,708 [INFO] root - Loaded worker settings: desc=5, img=8
+2025-12-25 12:25:34,709 [INFO] root - 
+╔══════════════════════════════════════╗
+║   🍌 Banana Slides API Server 🍌   ║
+╚══════════════════════════════════════╝
+Server starting on: http://localhost:5001
+Output Language: zh
+Environment: production
+Debug mode: False
+API Base URL: http://localhost:5001/api
+Database: sqlite:////Volumes/MacSD/GitHub/banana-slides/backend/instance/database.db
+Uploads: /Volumes/MacSD/GitHub/banana-slides/uploads
+2025-12-25 12:25:34,866 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:34] "GET /health HTTP/1.1" 200 -
+2025-12-25 12:25:35,635 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:35] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 12:25:35,639 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:35] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 12:25:35,640 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:35] "GET /api/projects/e6f222b1-073b-48da-9564-a2d777c726cd HTTP/1.1" 200 -
+2025-12-25 12:25:35,642 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:35] "GET /api/user-templates HTTP/1.1" 200 -
+2025-12-25 12:25:35,644 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:35] "GET /api/projects/e6f222b1-073b-48da-9564-a2d777c726cd HTTP/1.1" 200 -
+2025-12-25 12:25:35,645 [INFO] werkzeug - 127.0.0.1 - - [25/Dec/2025 12:25:35] "GET /api/user-templates HTTP/1.1" 200 -
